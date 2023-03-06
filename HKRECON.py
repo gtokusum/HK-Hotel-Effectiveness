@@ -17,7 +17,8 @@ queens = ['GQQ','GTT','STB','DCGQQ','ASJQQ']
 suitesK = ['SGK','STE1']
 SuitesS = 'STE2'
 suitesQ = ['SGQQ','ASGQQ']
-
+headerRow = ['B1','C1','D1','E1']
+headerValues = ['King Checkout','King Stayover','Queen Checkout','Queen Stayover']
 
 # pull data from boards. outputs dataframe of excel file
 def pull(name):
@@ -46,7 +47,30 @@ def counter(data):
         points = data['Room Points'].iloc[i]
         if pd.isna(points) == True:
             # write code to check service type and room
-            pass
+            room = data['Room Type'].iloc[i]
+            service = data['Service Type'].iloc[i]
+            if service == 'Check-Out':
+                if room in kings:
+                    pass
+                elif room in queens:
+                    pass
+                elif room in suitesK:
+                    pass
+                elif room in suitesQ:
+                    pass
+                else:
+                    pass
+            else:
+                if room in kings:
+                    pass
+                elif room in queens:
+                    pass
+                elif room in suitesK:
+                    pass
+                elif room in suitesQ:
+                    pass
+                else:
+                    pass
         else:
             match points:
                 case 3:
@@ -67,6 +91,8 @@ def counter(data):
                     pass
                 case 12:
                     pass
+                case _:
+                    pass
     
     return count
 
@@ -80,8 +106,13 @@ def create():
     return pxl.Workbook()
 
 # initilize excel sheet for headers
-def initExcel():
-    pass
+def initExcel(wb):
+    headers = initDict()
+    sheet = wb.active
+    for i in range(len(headers)):
+        sheet[headerRow[i]].value = headerValues[i]
+    return wb
+
 
 
 # saves calculations in excel format
