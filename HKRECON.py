@@ -51,9 +51,10 @@ def counter(data):
             service = data['Service Type'].iloc[i]
             if service == 'Check-Out':
                 if room in kings:
-                    pass
+                    count['King Checkout'] = count['King Checkout'] + 1
                 elif room in queens:
-                    pass
+                    count['Queen Checkout'] = count['Queen Checkout'] + 1
+                # figure out what the suites will be coded as and add code as necessary
                 elif room in suitesK:
                     pass
                 elif room in suitesQ:
@@ -62,9 +63,10 @@ def counter(data):
                     pass
             else:
                 if room in kings:
-                    pass
+                    count['King Stayover'] = count['King Stayover'] + 1
                 elif room in queens:
-                    pass
+                    count['Queen Stayover'] = count['Queen Checkout'] + 1
+                # figure out what the suites will be coded as and add code as necessary
                 elif room in suitesK:
                     pass
                 elif room in suitesQ:
@@ -81,7 +83,6 @@ def counter(data):
                     count['King Checkout'] = count["King Checkout"] + 1 
                 case 7:
                     count['Queen Checkout'] = count['Queen Checkout'] + 1
-                
                 # figure out what the suites will be coded as and add code as necessary
                 case 8:
                     pass
