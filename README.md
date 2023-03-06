@@ -1,6 +1,7 @@
 # Hotel Effectiveness Night Audit Entry Reporter
 
-    Partially automates the process of creating reports for night audit entry for housekeeping
+Partially automates the process of creating reports for night audit entry for housekeeping
+
 ## Dependecies
 
 WILL ONLY WORK WITH EXCEL FILES FROM INFOR HMS.
