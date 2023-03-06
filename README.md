@@ -4,9 +4,10 @@
 ## Dependecies
 
 WILL ONLY WORK WITH EXCEL FILES FROM INFOR HMS.
-
+```
 Pandas
 Openpyxl
+```
 Use package mangaer [pip](https://pip.pypa.io/en/stable/)
 
 ```bash
