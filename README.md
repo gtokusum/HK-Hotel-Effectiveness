@@ -5,9 +5,9 @@ Pandas
 Openpyxl
 Use package mangaer [pip](https://pip.pypa.io/en/stable/)
 
-'''bash
+```bash
 pip install Pandas
-'''
-'''bash
+```
+```bash
 pip install Openpyxl
-'''
+```
