@@ -1,7 +1,7 @@
 import pandas as pd
 import openpyxl as pxl
+from openpyxl.utils.dataframe import dataframe_to_rows
 import os
-
 '''
 Partially automates the Houskeeping Reconciliation sheet for the night audit process in Hotel Effectiveness
 Will pull through the boards downloaded from Infor HMS and create a new excel file with names and workload
@@ -106,8 +106,9 @@ def initDict():
 def create():
     return pxl.Workbook()
 
-# initilize excel sheet for headers
-def initExcel(wb):
+# initilize excel sheet for headers. returns openpyxl object w/headers
+def initExcel():
+    wb = create()
     headers = initDict()
     sheet = wb.active
     for i in range(len(headers)):
@@ -122,7 +123,11 @@ def save(pxlobj):
 
 # takes in list and adds each item to spreadsheet
 def fill(lst):
-    pass
+    wb = initExcel()
+    ws = wb.active
+    for i in range(len(lst)):
+        pass
+
 
 
 # Driver for program
