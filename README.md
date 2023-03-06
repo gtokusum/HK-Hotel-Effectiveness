@@ -17,7 +17,7 @@ pip install Pandas
 pip install Openpyxl
 ```
 
-# Usage
+## Usage
 
 This version is set to a specific hotel.
 
