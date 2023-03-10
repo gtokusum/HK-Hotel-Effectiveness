@@ -52,6 +52,7 @@ def df_to_excel(finCount):
     save(df)
 
 # returns count per employee
+# WILL NEED TO CHANGE FOR SUITESK,SUITESQ,SUITESS
 def counter(data):
     count = initDict()
     for i in range(len(data['Room Points'])):
@@ -65,25 +66,27 @@ def counter(data):
                     count['King Checkout'] = count['King Checkout'] + 1
                 elif room in queens:
                     count['Queen Checkout'] = count['Queen Checkout'] + 1
-                # figure out what the suites will be coded as and add code as necessary
+                # figure out what the suites will be coded as and change code as necessary
                 elif room in suitesK:
-                    pass
+                    count['King Checkout'] = count['King Checkout'] + 1
+                    count['King Stayover'] = count['King Stayover'] + 1
                 elif room in suitesQ:
-                    pass
+                    count['King Stayover'] = count['King Stayover'] + 1
+                    count['Queen Checkout'] = count['Queen Checkout'] + 1 
                 else:
-                    pass
+                    count['King Checkout'] = count['King Stayover'] + 2
             else:
                 if room in kings:
                     count['King Stayover'] = count['King Stayover'] + 1
                 elif room in queens:
                     count['Queen Stayover'] = count['Queen Checkout'] + 1
-                # figure out what the suites will be coded as and add code as necessary
+                # figure out what the suites will be coded as and change code as necessary
                 elif room in suitesK:
-                    pass
+                    count['King Checkout'] = count['King Checkout'] + 1
                 elif room in suitesQ:
-                    pass
+                    count['Queen Checkout'] = count['Queen Checkout'] + 1
                 else:
-                    pass
+                    count['Queen Stayover'] = count['Queen Stayover'] + 2
         else:
             match points:
                 case 3:
@@ -96,13 +99,15 @@ def counter(data):
                     count['Queen Checkout'] = count['Queen Checkout'] + 1
                 # figure out what the suites will be coded as and add code as necessary
                 case 8:
-                    pass
+                    count['Queen Stayover'] = count['Queen Stayover'] + 2
                 case 9:
-                    pass
+                    count['King Checkout'] = count['King Checkout'] + 1
+                    count['King Stayover'] = count['King Stayover'] + 1
                 case 10:
-                    pass
+                    count['King Stayover'] = count['King Stayover'] + 1
+                    count['Queen Checkout'] = count['Queen Checkout'] + 1
                 case 12:
-                    pass
+                    count['King Checkout'] = count['King Stayover'] + 2
                 case _:
                     pass
     
