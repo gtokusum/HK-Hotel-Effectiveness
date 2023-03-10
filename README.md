@@ -4,7 +4,9 @@ Partially automates the process of creating reports for night audit entry for ho
 
 ## Dependecies
 
-WILL ONLY WORK WITH EXCEL FILES FROM INFOR HMS. Download the excel file directly from Housekeeping Assignment page. Will need to filter out unassigned rooms. 
+WILL ONLY WORK WITH EXCEL FILES FROM INFOR HMS. Download the excel file directly from Housekeeping Assignment page. Will need to filter out unassigned rooms.\
+Packages:\
+Pandas
 ```
 Pandas
 ```
