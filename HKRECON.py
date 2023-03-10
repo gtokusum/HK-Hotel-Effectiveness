@@ -20,16 +20,20 @@ suitesQ = ['SGQQ','ASGQQ']
 headerRow = ['B1','C1','D1','E1']
 headerValues = ['King Checkout','King Stayover','Queen Checkout','Queen Stayover']
 
+
 # pull data from boards. outputs dataframe of excel file
 def pull(name):
     return pd.read_excel(name)
 
 
-# clean dataframe. returns dictionary with name as key and dataframe as value
+# clean dataframe. returns dictionaries with dataframe and names of employees
 def clean(df):
     output = df[['Room Type','Employee Assigned','Room Points','Service Type','Action']]
     output.sort_values(by='Employee Assigned')
-    return dict(tuple(output.groupby(by='Employee Assigned')))
+    cleaned = dict(tuple(output.groupby(by='Employee Assigned')))
+    return cleaned #, [i for i in cleaned] uncomment if needed to get names. Should not need
+
+    
 
 
 # calculates workload by employee 
@@ -42,7 +46,7 @@ def process(dict):
 # takes list from process() and converts to dataframe
 def df_to_excel(finCount):
     df = pd.DataFrame
-
+    
 
     save(df)
 
