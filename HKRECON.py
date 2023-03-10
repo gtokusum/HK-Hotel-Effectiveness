@@ -17,7 +17,7 @@ queens = ['GQQ','GTT','STB','DCGQQ','ASJQQ']
 suitesK = ['SGK','STE1']
 SuitesS = 'STE2'
 suitesQ = ['SGQQ','ASGQQ']
-headerRow = ['B1','C1','D1','E1']
+# headerRow = ['B1','C1','D1','E1']
 headerValues = ['King Checkout','King Stayover','Queen Checkout','Queen Stayover']
 
 
@@ -33,20 +33,21 @@ def clean(df):
     cleaned = dict(tuple(output.groupby(by='Employee Assigned')))
     return cleaned #, [i for i in cleaned] uncomment if needed to get names. Should not need
 
-    
-
-
 # calculates workload by employee 
 def process(dict):
     finCount = []
     for i in dict:
         finCount.append(i.key,counter(i.value))
-    return finCount
+    df_to_excel(finCount)
+    return True
 
 # takes list from process() and converts to dataframe
 def df_to_excel(finCount):
-    df = pd.DataFrame
-    
+    names = [i[0] for i in finCount]
+    df = pd.DataFrame(index = names,columns=headerValues)
+    for i in range(len(finCount)):
+        for j in headerValues:
+            df.loc[i].iloc[j] = finCount[j]
 
     save(df)
 
@@ -118,7 +119,12 @@ def save(df):
 
 # Driver for program
 def main():
-    pass
+    name = None
+    pulledData = pull(name)
+    cleaned = clean(pulledData)
+    worked = process(cleaned)
+    if worked:
+        print("DONE")
 
 
 if __name__ == '__main__':
