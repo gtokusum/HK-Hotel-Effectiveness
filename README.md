@@ -1,13 +1,12 @@
 # Hotel Effectiveness Night Audit Entry Reporter
 
-Partially automates the process of creating reports for night audit entry for housekeeping
+Partially automates the process of creating reports for night audit entry for housekeeping.
 
 ## Dependecies
 
-WILL ONLY WORK WITH EXCEL FILES FROM INFOR HMS.
+WILL ONLY WORK WITH EXCEL FILES FROM INFOR HMS. Download the excel file directly from Housekeeping Assignment page. Will need to filter out unassigned rooms. 
 ```
 Pandas
-Openpyxl
 ```
 Use package mangaer [pip](https://pip.pypa.io/en/stable/)
 
@@ -15,9 +14,6 @@ Use package mangaer [pip](https://pip.pypa.io/en/stable/)
 pip install Pandas
 ```
 
-```bash
-pip install Openpyxl
-```
 
 ## Usage
 
