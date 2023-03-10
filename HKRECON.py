@@ -38,7 +38,13 @@ def process(dict):
     for i in dict:
         finCount.append(i.key,counter(i.value))
     return finCount
-        
+
+# takes list from process() and converts to dataframe
+def df_to_excel(finCount):
+    df = pd.DataFrame
+
+
+    save(df)
 
 # returns count per employee
 def counter(data):
@@ -102,33 +108,9 @@ def initDict():
     # change according to new set up 
     return {'King Checkout':0,'King Stayover':0,'Queen Checkout':0,'Queen Stayover':0}
 
-# creates workbook
-def create():
-    return pxl.Workbook()
-
-# initilize excel sheet for headers. returns openpyxl object w/headers
-def initExcel():
-    wb = create()
-    headers = initDict()
-    sheet = wb.active
-    for i in range(len(headers)):
-        sheet[headerRow[i]].value = headerValues[i]
-    return wb
-
-
-
 # saves calculations in excel format
-def save(pxlobj):
-    pxlobj.save("HE REPORT.xlsx")
-
-# takes in list and adds each item to spreadsheet
-def fill(lst):
-    wb = initExcel()
-    ws = wb.active
-    for i in range(len(lst)):
-        pass
-
-
+def save(df):
+    df.to_excel("HERECON.xlsx")
 
 # Driver for program
 def main():
