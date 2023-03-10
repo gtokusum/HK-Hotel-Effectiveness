@@ -37,17 +37,21 @@ def clean(df):
 def process(dict):
     finCount = []
     for i in dict:
-        finCount.append(i.key,counter(i.value))
+        # finCount.append(i.key,counter(i.value))
+        finCount.append((i,counter(dict[i])))
+    # print(finCount)
     df_to_excel(finCount)
     return True
 
 # takes list from process() and converts to dataframe
 def df_to_excel(finCount):
     names = [i[0] for i in finCount]
+    print(names)
     df = pd.DataFrame(index = names,columns=headerValues)
     for i in range(len(finCount)):
-        for j in headerValues:
-            df.loc[i].iloc[j] = finCount[j]
+        for j in range(len(headerValues)):
+            
+            df.iloc[i].loc[headerValues[j]] = finCount[i][1][headerValues[j]]
 
     save(df)
 
@@ -124,7 +128,7 @@ def save(df):
 
 # Driver for program
 def main():
-    name = None
+    name = "Test Sheet.xlsx"
     pulledData = pull(name)
     cleaned = clean(pulledData)
     worked = process(cleaned)
