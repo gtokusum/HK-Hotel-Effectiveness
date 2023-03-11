@@ -10,8 +10,8 @@ import tkinter as tk
 from tkinter import filedialog
 from HKRECON import main
 
-WIDTH = 800
-LENGTH = 600
+WIDTH = 200
+LENGTH = 100
 
 # file browser function 
 def fileBrowse():
@@ -28,5 +28,5 @@ root = tk.Tk()
 root.geometry(f"{WIDTH}x{LENGTH}")
 root.title("Hotel Effectiveness Room Clean Reporter")
 filebnt = tk.Button(root,text='Select File and Start',command=fileBrowse)
-filebnt.pack(side='left',padx=200,pady=0)
+filebnt.pack()
 root.mainloop()
