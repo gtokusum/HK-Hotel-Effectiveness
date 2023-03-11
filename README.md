@@ -46,7 +46,7 @@ After changing the room types and points, use [pyinstaller](https://pypi.org/pro
 pip install pyinstaller
 pip install auto_py_to_exe
 ```
-Using pyinstaller use the following command\
+Using pyinstaller use the following command
 ```bash
 pyinstaller --noconfirm --onefile --windowed  "'DIRECTORY TO FOLDER'\gui.py"
 ```
