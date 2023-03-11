@@ -6,12 +6,15 @@ Partially automates the process of creating reports for night audit entry for ho
 
 WILL ONLY WORK WITH EXCEL FILES FROM INFOR HMS. Download the excel file directly from Housekeeping Assignment page. Will need to filter out unassigned rooms.\
 Packages:
-[Pandas](https://pandas.pydata.org/)
+
+[Pandas](https://pandas.pydata.org/)\
+[numpy](https://numpy.org/)
 
 Use package mangaer [pip](https://pip.pypa.io/en/stable/)
 
 ```bash
 pip install Pandas
+pip install numpy
 ```
 
 ## Usage
