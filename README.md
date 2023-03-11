@@ -6,9 +6,9 @@ Partially automates the process of creating reports for night audit entry for ho
 
 WILL ONLY WORK WITH EXCEL FILES FROM INFOR HMS. Download the excel file directly from Housekeeping Assignment page. Will need to filter out unassigned rooms.\
 Packages:
-```
+
 [Pandas](https://pandas.pydata.org/)
-```
+
 Use package mangaer [pip](https://pip.pypa.io/en/stable/)
 
 ```bash
@@ -39,7 +39,7 @@ if points == credit_values_here
 
 ## Create Executable File
 
-After changing the room types and points, use [pyinstaller](https://pypi.org/project/pyinstaller/) or [auto_py_to_exe](https://pypi.org/project/auto-py-to-exe/) to create executable\
+After changing the room types and points, use [pyinstaller](https://pypi.org/project/pyinstaller/) or [auto_py_to_exe](https://pypi.org/project/auto-py-to-exe/) to create executable
 
 '''bash
 pip install pyinstaller
@@ -50,7 +50,7 @@ Using pyinstaller use the following command\
 pyinstaller --noconfirm --onefile --windowed  "'DIRECTORY TO FOLDER'\gui.py"
 '''
 
-Using auto_py_to_exe run the following command to start\
+Using auto_py_to_exe run the following command to start
 '''bash
 auto_py_to_exe
 '''
