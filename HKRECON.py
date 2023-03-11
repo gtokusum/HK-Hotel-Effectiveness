@@ -126,9 +126,9 @@ def initDict():
 def save(df):
     df.to_excel("HERECON.xlsx")
 
-# Driver for program
-def main():
-    name = "Sheet1 (5).xlsx"
+# Driver for program, name needs to be file name/location
+def main(name):
+    # name = "Sheet1 (5).xlsx"
     pulledData = pull(name)
     cleaned = clean(pulledData)
     worked = process(cleaned)

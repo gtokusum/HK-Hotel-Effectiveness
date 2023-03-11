@@ -17,6 +17,7 @@ LENGTH = 600
 def fileBrowse():
     filename = filedialog.askopenfilename(initialdir = '/',
                                           title = 'select a file',)
+    main(filename)
     
     # label_file_explorer.configure(text='File Opened: '+filename)
 
@@ -26,8 +27,6 @@ def fileBrowse():
 root = tk.Tk()
 root.geometry(f"{WIDTH}x{LENGTH}")
 root.title("Hotel Effectiveness Room Clean Reporter")
-button = tk.Button(root,text='BUTTON',command=main)
-button.pack(padx=100,pady=200)
-filebnt = tk.Button(root,text='Select File',command=fileBrowse)
-filebnt.pack(side='left',padx=100,pady=0)
+filebnt = tk.Button(root,text='Select File and Start',command=fileBrowse)
+filebnt.pack(side='left',padx=200,pady=0)
 root.mainloop()
