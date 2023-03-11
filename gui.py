@@ -8,6 +8,7 @@ HKRECON
 '''
 import tkinter as tk
 from tkinter import filedialog
+import pandas as pd
 from HKRECON import main
 
 WIDTH = 200
@@ -18,13 +19,18 @@ def fileBrowse():
     filename = filedialog.askopenfilename(initialdir = '/',
                                           title = 'select a file',)
     main(filename)
-    
+    displayData()
     # label_file_explorer.configure(text='File Opened: '+filename)
 
 # display dataframe after being saved to excel file
-def displayData():
-    pass
-
+def displayData():  
+    df = pd.read_excel("HERECON.xlsx")
+    win = tk.Toplevel()
+    message = "Report Output"
+    tk.Label(win,text=message).pack()
+    text = tk.Text(win)
+    text.insert(tk.END, str(df))
+    text.pack()
 
 # builds and displays gui
 root = tk.Tk()
