@@ -21,6 +21,9 @@ def fileBrowse():
     
     # label_file_explorer.configure(text='File Opened: '+filename)
 
+# display dataframe after being saved to excel file
+def displayData():
+    pass
 
 
 # builds and displays gui
