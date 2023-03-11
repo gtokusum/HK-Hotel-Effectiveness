@@ -46,7 +46,7 @@ def process(dict):
 # takes list from process() and converts to dataframe
 def df_to_excel(finCount):
     names = [i[0] for i in finCount]
-    print(names)
+    # print(names)
     df = pd.DataFrame(index = names,columns=headerValues)
     for i in range(len(finCount)):
         for j in range(len(headerValues)):
@@ -132,8 +132,8 @@ def main(name):
     pulledData = pull(name)
     cleaned = clean(pulledData)
     worked = process(cleaned)
-    if worked:
-        print("DONE")
+    # if worked:
+    #     print("DONE")
 
 
 if __name__ == '__main__':
