@@ -2,9 +2,16 @@
 
 Partially automates the process of creating reports for night audit entry for housekeeping.
 
-## Dependecies
+## Background Info
 
 WILL ONLY WORK WITH EXCEL FILES FROM INFOR HMS. Download the excel file directly from Housekeeping Assignment page. Will need to filter out unassigned rooms.\
+Error handeling is not implemented yet. Selecting wrong file type or certain changes will cause script to end abruptly\
+Future Implementation:\
+Error Handeling\
+Initialization of room types/points instead of manually changing code to fit per property.
+
+## Dependecies
+
 Packages:
 
 [Pandas](https://pandas.pydata.org/)\
@@ -48,7 +55,7 @@ pip install auto_py_to_exe
 ```
 Using pyinstaller use the following command
 ```bash
-pyinstaller --noconfirm --onefile --windowed  "'DIRECTORY TO FOLDER'\gui.py"
+pyinstaller --noconfirm --onefile --windowed  "'PATH'\gui.py"
 ```
 
 Using auto_py_to_exe run the following command to start

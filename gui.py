@@ -16,7 +16,7 @@ from HKRECON import main
 WIDTH = 200
 LENGTH = 100
 
-# file browser function 
+# file browser function
 def fileBrowse():
     filename = filedialog.askopenfilename(initialdir = '/',
                                           title = 'select a file',)
@@ -24,7 +24,7 @@ def fileBrowse():
     displayData(main(filename))
     # label_file_explorer.configure(text='File Opened: '+filename)
 
-# display dataframe after being saved to excel file
+# display dataframe as a pop up window 
 def displayData(df):  
     win = tk.Toplevel()
     message = "Report Output"
@@ -33,7 +33,8 @@ def displayData(df):
     text.insert(tk.END, str(df))
     text.pack()
 
-# builds and displays gui
+
+# builds and run gui
 root = tk.Tk()
 root.geometry(f"{WIDTH}x{LENGTH}")
 root.title("Hotel Effectiveness Room Clean Reporter")

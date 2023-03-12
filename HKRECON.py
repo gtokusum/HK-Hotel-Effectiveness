@@ -11,7 +11,7 @@ Pandas - creates tables from excel to support with data processing
 Openpyxl - excel support (not implemented)
 '''
 
-# init global variables for when points == NAN 
+# init global variables for when points == NAN, Likely happens when pulling boards with completed rooms
 kings = ['GK','AGK','B5GK','DGK','STK']
 queens = ['GQQ','GTT','STB','DCGQQ','ASJQQ']
 suitesK = ['SGK','STE1']
@@ -54,25 +54,27 @@ def df_to_excel(finCount):
             
             df.iloc[i].loc[headerValues[j]] = finCount[i][1][headerValues[j]]
 
+    # uncomment code below if you would like to save the report as an excel file. Will send file to PATH.
     # save(df)
     return df
 
-# returns count per employee
+# returns room count by room typer per employee
 # WILL NEED TO CHANGE FOR SUITESK,SUITESQ,SUITESS
 def counter(data):
     count = initDict()
     for i in range(len(data['Room Points'])):
         points = data['Room Points'].iloc[i]
         if pd.isna(points) == True:
-            # write code to check service type and room
+            # check service type and room
             room = data['Room Type'].iloc[i]
             service = data['Service Type'].iloc[i]
+
+            # change values here to adjust per property
             if service == 'Check-Out':
                 if room in kings:
                     count['King Checkout'] = count['King Checkout'] + 1
                 elif room in queens:
                     count['Queen Checkout'] = count['Queen Checkout'] + 1
-                # figure out what the suites will be coded as and change code as necessary
                 elif room in suitesK:
                     count['King Checkout'] = count['King Checkout'] + 1
                     count['King Stayover'] = count['King Stayover'] + 1
@@ -86,7 +88,6 @@ def counter(data):
                     count['King Stayover'] = count['King Stayover'] + 1
                 elif room in queens:
                     count['Queen Stayover'] = count['Queen Checkout'] + 1
-                # figure out what the suites will be coded as and change code as necessary
                 elif room in suitesK:
                     count['King Checkout'] = count['King Checkout'] + 1
                 elif room in suitesQ:
@@ -103,7 +104,6 @@ def counter(data):
                     count['King Checkout'] = count["King Checkout"] + 1 
                 case 7:
                     count['Queen Checkout'] = count['Queen Checkout'] + 1
-                # figure out what the suites will be coded as and add code as necessary
                 case 8:
                     count['Queen Stayover'] = count['Queen Stayover'] + 2
                 case 9:
@@ -121,7 +121,7 @@ def counter(data):
 
 # initializes Dictionary for room count
 def initDict():
-    # change according to new set up 
+    # Add more if needed. i.e. more room types available on HE
     return {'King Checkout':0,'King Stayover':0,'Queen Checkout':0,'Queen Stayover':0}
 
 # saves calculations in excel format
@@ -129,6 +129,7 @@ def save(df):
     df.to_excel("HERECON.xlsx")
 
 # Driver for program, name needs to be file name/location
+# Using gui.py will allow for selection of file. 
 def main(name):
     # name = "Sheet1 (5).xlsx"
     pulledData = pull(name)
@@ -138,6 +139,6 @@ def main(name):
     # if worked:
     #     print("DONE")
 
-
-if __name__ == '__main__':
-    main()
+# Uncomment below if running script from here instead of gui.py
+# if __name__ == '__main__':
+#     main()
