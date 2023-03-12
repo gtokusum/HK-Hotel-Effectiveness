@@ -5,7 +5,7 @@ Minimal script that automates the room count sorted by room type for Housekeepin
 ## Background Info
 
 WILL ONLY WORK WITH EXCEL FILES FROM INFOR HMS. Download the excel file directly from Housekeeping Assignment page. Will need to filter out unassigned rooms.\
-Error handeling is not implemented yet. Selecting wrong file type or certain changes will cause script to end abruptly\
+Error handeling is not implemented yet. Selecting wrong file type or certain changes will cause script to end abruptly
 
 Future Implementation:\
 Error Handeling\
@@ -57,7 +57,7 @@ pip install auto_py_to_exe
 ```
 Using pyinstaller use the following command
 ```bash
-pyinstaller --noconfirm --onefile --windowed  "'PATH'\gui.py"
+pyinstaller --noconfirm --onefile --windowed  "'PATH TO FOLDER'\gui.py"
 ```
 
 Using auto_py_to_exe run the following command to start
