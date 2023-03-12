@@ -6,6 +6,7 @@ Partially automates the process of creating reports for night audit entry for ho
 
 WILL ONLY WORK WITH EXCEL FILES FROM INFOR HMS. Download the excel file directly from Housekeeping Assignment page. Will need to filter out unassigned rooms.\
 Error handeling is not implemented yet. Selecting wrong file type or certain changes will cause script to end abruptly\
+
 Future Implementation:\
 Error Handeling\
 Initialization of room types/points instead of manually changing code to fit per property.
