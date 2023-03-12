@@ -18,13 +18,12 @@ LENGTH = 100
 def fileBrowse():
     filename = filedialog.askopenfilename(initialdir = '/',
                                           title = 'select a file',)
-    main(filename)
-    displayData()
+    
+    displayData(main(filename))
     # label_file_explorer.configure(text='File Opened: '+filename)
 
 # display dataframe after being saved to excel file
-def displayData():  
-    df = pd.read_excel("HERECON.xlsx")
+def displayData(df):  
     win = tk.Toplevel()
     message = "Report Output"
     tk.Label(win,text=message).pack()

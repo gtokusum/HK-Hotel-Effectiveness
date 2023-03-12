@@ -41,8 +41,8 @@ def process(dict):
         # finCount.append(i.key,counter(i.value))
         finCount.append((i,counter(dict[i])))
     # print(finCount)
-    df_to_excel(finCount)
-    return True
+    return df_to_excel(finCount)
+    # return True
 
 # takes list from process() and converts to dataframe
 def df_to_excel(finCount):
@@ -54,7 +54,8 @@ def df_to_excel(finCount):
             
             df.iloc[i].loc[headerValues[j]] = finCount[i][1][headerValues[j]]
 
-    save(df)
+    # save(df)
+    return df
 
 # returns count per employee
 # WILL NEED TO CHANGE FOR SUITESK,SUITESQ,SUITESS
@@ -132,7 +133,8 @@ def main(name):
     # name = "Sheet1 (5).xlsx"
     pulledData = pull(name)
     cleaned = clean(pulledData)
-    worked = process(cleaned)
+    # worked = process(cleaned)
+    return process(cleaned)
     # if worked:
     #     print("DONE")
 
