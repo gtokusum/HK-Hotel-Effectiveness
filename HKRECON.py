@@ -8,7 +8,7 @@ Will pull through the boards downloaded from Infor HMS and create a new excel fi
 
 Dependencies:
 Pandas - creates tables from excel to support with data processing
-Openpyxl - excel support
+Openpyxl - excel support (not implemented)
 '''
 
 # init global variables for when points == NAN 

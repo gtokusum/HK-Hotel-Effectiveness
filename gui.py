@@ -1,9 +1,11 @@
 '''
 GUI to allow easier use of HKRECON.py.
-Will include pop out file selector 
+Minimal GUI with one button that opens file selector and runs HKRECON.py
+Uses pop out window to display table w/names and count
 
 Dependencies:
 Tkinter
+Pandas
 HKRECON
 '''
 import tkinter as tk
