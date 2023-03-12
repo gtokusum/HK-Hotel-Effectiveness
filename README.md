@@ -1,6 +1,6 @@
 # Hotel Effectiveness Night Audit Entry Reporter
 
-Partially automates the process of creating reports for night audit entry for housekeeping.
+Minimal script that automates the room count sorted by room type for Housekeeping Gameday in Hotel Effectiveness
 
 ## Background Info
 
@@ -9,7 +9,8 @@ Error handeling is not implemented yet. Selecting wrong file type or certain cha
 
 Future Implementation:\
 Error Handeling\
-Initialization of room types/points instead of manually changing code to fit per property.
+Initialization of room types/points instead of manually changing code to fit per property.\
+Streamline building of script 
 
 ## Dependecies
 
