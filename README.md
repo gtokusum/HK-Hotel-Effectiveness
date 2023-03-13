@@ -66,4 +66,6 @@ auto_py_to_exe
 ```
 This will bring up a GUI for pyinstaller.\
 Select the script gui.py and select One File, Window Based\
+![Alt text](/img/auto_py_to_exe.PNG) 
+
 Convert the scrpt to executable and the exe file should move to "C:\User\YOUR NAME\output"
