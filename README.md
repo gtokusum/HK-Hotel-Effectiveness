@@ -10,7 +10,9 @@ Error handeling is not implemented yet. Selecting wrong file type or certain cha
 Future Implementation:\
 Error Handeling\
 Initialization of room types/points instead of manually changing code to fit per property.\
-Streamline building of script 
+Streamline building of script\
+Create more visual pleasing GUI\
+Automatically input into Hotel Effectiveness
 
 ## Dependecies
 
@@ -65,7 +67,8 @@ Using auto_py_to_exe run the following command to start
 auto_py_to_exe
 ```
 This will bring up a GUI for pyinstaller.\
-Select the script gui.py and select One File, Window Based\
+Select the script gui.py and select One File, Window Based
+
 ![Alt text](/img/auto_py_to_exe.PNG) 
 
-Convert the scrpt to executable and the exe file should move to "C:\User\YOUR NAME\output"
+Convert the script to executable and the exe file should move to "C:\User\YOUR NAME\output"
