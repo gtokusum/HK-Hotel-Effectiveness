@@ -7,7 +7,7 @@ Minimal script that automates the room count sorted by room type for Housekeepin
 WILL ONLY WORK WITH EXCEL FILES FROM INFOR HMS. Download the excel file directly from Housekeeping Assignment page. Will need to filter out unassigned rooms.\
 Selecting an excel sheet not in the format of HMS tables will result in a file error
 
-Future Implementation:\\
+Future Implementation:\
 Error Handeling - simple version added 3/14/2023\
 Initialization of room types/points instead of manually changing code to fit per property.\
 Streamline building of script\
