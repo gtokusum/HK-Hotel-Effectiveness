@@ -18,11 +18,23 @@ LENGTH = 100
 
 # file browser function
 def fileBrowse():
-    filename = filedialog.askopenfilename(initialdir = '/',
-                                          title = 'select a file',)
+    filename = filedialog.askopenfilename(initialdir = '/',title='Select a File', filetypes=[("Excel files","*.xlsx")])
     
-    displayData(main(filename))
-    # label_file_explorer.configure(text='File Opened: '+filename)
+    
+    try:
+        displayData(main(filename))
+    except:
+        displayError()
+    
+def displayError():
+    win = tk.Toplevel()
+    message = 'Incorrect Excel Sheet'
+    tk.Label(win,text='File Error').pack()
+    text = tk.Text(win)
+    text.insert(tk.END,str(message))
+    text.pack()
+
+
 
 # display dataframe as a pop up window 
 def displayData(df):  
