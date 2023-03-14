@@ -1,4 +1,4 @@
-# Hotel Effectiveness Night Audit Entry Reporter
+# Hotel Effectiveness Housekeeping GameDay Entry Reporter
 
 Minimal script that automates the room count sorted by room type for Housekeeping Gameday in Hotel Effectiveness
 

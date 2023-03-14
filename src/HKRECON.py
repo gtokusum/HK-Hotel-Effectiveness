@@ -18,7 +18,6 @@ suitesK = ['SGK','STE1']
 SuitesS = 'STE2'
 suitesQ = ['SGQQ','ASGQQ']
 # headerRow = ['B1','C1','D1','E1']
-# headerValues = ['King Checkout','King Stayover','Queen Checkout','Queen Stayover']
 headerValues = ['King Stayover','King Checkout','Queen Stayover','Queen Checkout']
 
 
