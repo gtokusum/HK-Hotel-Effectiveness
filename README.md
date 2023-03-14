@@ -19,13 +19,11 @@ Fully automate script on server like Raspberry Pi - will need HE and HMS API and
 Packages:
 
 [Pandas](https://pandas.pydata.org/)\
-[numpy](https://numpy.org/)
 
 Use package mangaer [pip](https://pip.pypa.io/en/stable/)
 
 ```bash
 pip install Pandas
-pip install numpy
 ```
 
 ## Usage
