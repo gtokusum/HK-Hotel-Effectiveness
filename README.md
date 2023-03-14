@@ -9,10 +9,10 @@ Selecting an excel sheet not in the format of HMS tables will result in a file e
 
 Future Implementation:\
 Error Handeling - simple version added 3/14/2023\
-Initialization of room types/points instead of manually changing code to fit per property.\
-Streamline building of script\
+Streamline building of script - Include initialization set up and automatically create .exe\
 Create more visual pleasing GUI\
-Automatically input into Hotel Effectiveness
+Automatically input into Hotel Effectiveness - Will need HE API\
+Fully automate script on server like Raspberry Pi - will need HE and HMS API and will run on a timer.
 
 ## Dependecies
 
