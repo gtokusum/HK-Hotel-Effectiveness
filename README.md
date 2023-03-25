@@ -11,7 +11,7 @@ Future Implementation:\
 Error Handeling - simple version added 3/14/2023\
 Streamline building of script - Include initialization set up and automatically create .exe\
 Create more visual pleasing GUI\
-Automatically input into Hotel Effectiveness - Will need HE API\
+Automatically input into Hotel Effectiveness - Will use broweser automater\
 Fully automate script on server like Raspberry Pi - will need HE and HMS API and will run on a timer.
 
 ## Dependecies
