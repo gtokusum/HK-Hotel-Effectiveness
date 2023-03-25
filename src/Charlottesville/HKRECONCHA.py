@@ -60,9 +60,9 @@ def counter(data):
     count = initDict()
     for i in range(len(data['Room Points'])):
         points = data['Room Points'].iloc[i]
+        room = data['Room Type'].iloc[i]
         if pd.isna(points) == True:
             # check service type and room
-            room = data['Room Type'].iloc[i]
             service = data['Service Type'].iloc[i]
 
             # change values here to adjust per property
@@ -89,9 +89,15 @@ def counter(data):
                 case 4:
                     count['Queen Stayover'] = count['Queen Stayover'] + 1
                 case 6:
-                    count['King Checkout'] = count["King Checkout"] + 1 
+                    if room in kings:
+                        count['King Checkout'] = count["King Checkout"] + 1 
+                    else: 
+                        count['Suite Stayover'] = count['Suite Stayover'] + 1
                 case 7:
-                    count['Queen Checkout'] = count['Queen Checkout'] + 1
+                    if room in queens:
+                        count['Queen Checkout'] = count['Queen Checkout'] + 1
+                    else:
+                        count['Suite Stayover'] = count['Suite Stayover'] + 1 
                 case 8:
                     count['Queen Stayover'] = count['Queen Stayover'] + 2
                 case 9:

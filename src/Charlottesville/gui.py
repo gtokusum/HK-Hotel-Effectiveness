@@ -42,8 +42,8 @@ def displayData(df):
     # win.geometry('800x400')
     message = "Report Output"
     tk.Label(win,text=message).pack()
-    text = tk.Text(win,width=105)
-    text.insert(tk.END,df)
+    text = tk.Text(win,width=125)
+    text.insert(tk.END,df.to_string())
     # text.insert(tk.END, str(df))
     text.pack()
 
