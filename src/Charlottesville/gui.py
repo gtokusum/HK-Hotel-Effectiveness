@@ -27,7 +27,7 @@ def fileBrowse():
         displayError()
     
 def displayError():
-    win = tk.Toplevel()
+    win = tk.Toplevel(root)
     message = 'Incorrect Excel Sheet'
     tk.Label(win,text='File Error').pack()
     text = tk.Text(win)
@@ -38,11 +38,13 @@ def displayError():
 
 # display dataframe as a pop up window 
 def displayData(df):  
-    win = tk.Toplevel()
+    win = tk.Toplevel(root)
+    # win.geometry('800x400')
     message = "Report Output"
     tk.Label(win,text=message).pack()
-    text = tk.Text(win)
-    text.insert(tk.END, str(df))
+    text = tk.Text(win,width=105)
+    text.insert(tk.END,df)
+    # text.insert(tk.END, str(df))
     text.pack()
 
 
