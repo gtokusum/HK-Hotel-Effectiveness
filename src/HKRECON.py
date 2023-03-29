@@ -109,7 +109,7 @@ def counter(data):
                     count['King Stayover'] = count['King Stayover'] + 1
                     count['Queen Checkout'] = count['Queen Checkout'] + 1
                 case 12:
-                    count['King Checkout'] = count['King Stayover'] + 2
+                    count['King Checkout'] = count['King Checkout'] + 2
                 case _:
                     pass
     
