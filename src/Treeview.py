@@ -69,7 +69,8 @@ def displayData(df):
             tree.insert('',tk.END,values=values[i],tags=('evenrow',))
         else:
             tree.insert('',tk.END,values=values[i],tags=('oddrow',))
-    tree.tag_configure('oddrow',background='pale green')
+            # change color of odd rows here. Go to http://cs111.wellesley.edu/archive/cs111_fall14/public_html/labs/lab12/tkintercolor.html to see all the colors available
+    tree.tag_configure('oddrow',background='MediumPurple1')
     tree.grid(row=0,column=0,sticky='nsew')
     yscrollbar = ttk.Scrollbar(root,orient=tk.VERTICAL,commant=tree.yview)
     xscrollbar = ttk.Scrollbar(root,orient='horizontal')
