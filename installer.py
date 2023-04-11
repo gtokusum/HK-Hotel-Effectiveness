@@ -1,3 +1,10 @@
+'''
+This file should allow for easier updating as you can download .py files and adjust if needed and create executable locally instead of downloading.
+Will just need to convert this file into an executable.
+'''
+
+
+
 import pyinstaller
 import os
 
