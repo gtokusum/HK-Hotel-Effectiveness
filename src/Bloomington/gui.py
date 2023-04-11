@@ -17,9 +17,11 @@ from HKRECON import main
 WIDTH = 200
 LENGTH = 100
 
+kings,kingc,queens,queenc = 'King Stayover','King Checkout','Queen Stayover','Queen Checkout'
+
 # file browser function
 def fileBrowse():
-    filename = filedialog.askopenfilename(initialdir = '/',title='Select a File', filetypes=[("Excel files","*.xlsx")])
+    filename = filedialog.askopenfilename(initialdir = '/Downloads',title='Select a File', filetypes=[("Excel files","*.xlsx")])
     
     
     try:
@@ -51,19 +53,20 @@ def displayData(df):
     # change later
     root.title('treeview')
     root.resizable(width=800,height=400)
-    columns = ('HK Name','King Stayover','King Checkout','Queen Stayover','Queen Checkout')
+    columns = ('HK Name',kings,kingc,queens,queenc)
+    # columns = ('HK Name','King Stayover','King Checkout','Queen Stayover','Queen Checkout')
     values = dfValues(df)
     tree = ttk.Treeview(root,columns = columns,show='headings')
     tree.heading('HK Name',text='HK Name')
     tree.column('HK Name',minwidth=0,width=150,stretch=False)
-    tree.heading('King Stayover',text = 'King Stayover')
-    tree.column('King Stayover',minwidth=0,width=150,stretch=False)
-    tree.heading('King Checkout', text = 'King Checkout')
-    tree.column('King Checkout',minwidth=0,width=150,stretch=False)
-    tree.heading('Queen Stayover',text = 'Queen Stayover')
-    tree.column('Queen Stayover',minwidth=0,width=150,stretch=False)
-    tree.heading('Queen Checkout',text = 'Queen Checkout')
-    tree.column('Queen Checkout',minwidth=0,width=150,stretch=False)
+    tree.heading(kings,text = 'King Stayover')
+    tree.column(kings,minwidth=0,width=150,stretch=False)
+    tree.heading(kingc, text = 'King Checkout')
+    tree.column(kingc,minwidth=0,width=150,stretch=False)
+    tree.heading(queens,text = 'Queen Stayover')
+    tree.column(queens,minwidth=0,width=150,stretch=False)
+    tree.heading(queenc,text = 'Queen Checkout')
+    tree.column(queenc,minwidth=0,width=150,stretch=False)
     for i in range(len(values)):
         if i%2 == 0:
             tree.insert('',tk.END,values=values[i],tags=('evenrow',))
