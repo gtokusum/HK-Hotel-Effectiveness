@@ -52,7 +52,7 @@ def displayData(df):
     root = tk.Tk()
     # change later
     root.title('treeview')
-    root.resizable(width=800,height=400)
+    root.resizable(width=800,height=500)
     columns = ('HK Name',kings,kingc,queens,queenc)
     # columns = ('HK Name','King Stayover','King Checkout','Queen Stayover','Queen Checkout')
     values = dfValues(df)

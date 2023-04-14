@@ -41,7 +41,7 @@ def displayError():
 
 # converts dataframe rows to list of tuples
 def dfValues(df):
-    print(df)
+    # print(df)
     xlst = []
     ind = [i for i in df.index]
     for i in range(len(df)):
@@ -54,7 +54,7 @@ def dfValues(df):
 def displayData(df):
     root = tk.Tk()
     # change later
-    root.title('treeview')
+    root.title('Hotel Effectiveness Report')
     root.resizable(width=800,height=400)
     columns = ('HK Name',suites,suitec,'King Stayover','King Checkout','Queen Stayover','Queen Checkout')
     values = dfValues(df)
