@@ -9,9 +9,9 @@ Selecting an excel sheet not in the format of HMS tables will result in a file e
 
 Future Implementation:\
 Error Handeling - simple version added 3/14/2023\
-Streamline building of script - Include initialization set up and automatically create .exe\
+Streamline building of script - Include initialization set up and automatically create .exe file\
 Create more visual pleasing GUI\
-Automatically input into Hotel Effectiveness - Will use broweser automater. Will most likely need to install web driver for this. Will need to figure out password storage. Maybe able to implement chrome password manager.\
+Automatically input into Hotel Effectiveness - Will use broweser automater. Will most likely need to install web driver for this. Will need to figure out password storage solution.\
 Fully automate script on server like Raspberry Pi - will need HE and HMS API and will run on a timer. Could put in updater that checks github regularly and installs updates. Will keep backup of 2 previous version.
 
 ## Dependecies
