@@ -11,7 +11,7 @@ Future Implementation:\
 Error Handeling - simple version added 3/14/2023\
 Streamline building of script - Include initialization set up and automatically create .exe\
 Create more visual pleasing GUI\
-Automatically input into Hotel Effectiveness - Will use broweser automater. Will most likely need to install web driver for this\
+Automatically input into Hotel Effectiveness - Will use broweser automater. Will most likely need to install web driver for this. Will need to figure out password storage. Maybe able to implement chrome password manager.\
 Fully automate script on server like Raspberry Pi - will need HE and HMS API and will run on a timer. Could put in updater that checks github regularly and installs updates. Will keep backup of 2 previous version.
 
 ## Dependecies
