@@ -17,7 +17,7 @@ def toGameday(driver):
     driver.get("https://my.hoteleffectiveness.com/signin")
     driver.set_window_size(945, 1020)
     driver.find_element(By.ID, "myheqa-loginForm-field-username").send_keys("gtokusumi") #username
-    driver.find_element(By.ID, "myheqa-loginForm-field-password").send_keys("password") #password
+    driver.find_element(By.ID, "myheqa-loginForm-field-password").send_keys("@irfruitflY1") #password
     driver.find_element(By.ID, "myheqa-loginForm-button-submit").click() #click on log in button
 
     # waits until it finds link to housekeeping gameday set up page. once found click it
@@ -43,10 +43,12 @@ def inputValues(df,driver):
     driver.switch_to.frame('receiver') #swtich to frame with grid
     grid = driver.find_element(By.ID,'ctl00_main_tblGameDaySchedule') # finds grid and saves as variable
     newDf = df
-    newDf.columns = ['2','3','4','5']
+    newDf.columns = ['2','3','4','5'] #sets dataframe columns to match with Hotel Effectiveness
+
+    a,b = 2,6
     # will loop through each cell and input value
     for j in range(0,empNum): # row value
-        for i in range(2,6): # column value
+        for i in range(a,b): # column value
             grid.find_element(By.ID, f'ctl00_main_txtScheduleDetail1{i}0{j}').send_keys(int(newDf.iloc[j][str(i)]))
 
     #switch back to default content
