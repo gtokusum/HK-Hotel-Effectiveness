@@ -13,6 +13,7 @@ from tkinter import ttk
 from tkinter import filedialog
 import pandas as pd
 from HKRECON import main
+from input import mainFunc
 
 WIDTH = 200
 LENGTH = 100
@@ -49,33 +50,34 @@ def dfValues(df):
 
 # display dataframe as a pop up window 
 def displayData(df):
-    root = tk.Tk()
-    # change later
-    root.title('treeview')
-    root.resizable(width=800,height=500)
-    columns = ('HK Name',kings,kingc,queens,queenc)
-    # columns = ('HK Name','King Stayover','King Checkout','Queen Stayover','Queen Checkout')
-    values = dfValues(df)
-    tree = ttk.Treeview(root,columns = columns,show='headings')
-    tree.heading('HK Name',text='HK Name')
-    tree.column('HK Name',minwidth=0,width=150,stretch=False)
-    tree.heading(kings,text = 'King Stayover')
-    tree.column(kings,minwidth=0,width=150,stretch=False)
-    tree.heading(kingc, text = 'King Checkout')
-    tree.column(kingc,minwidth=0,width=150,stretch=False)
-    tree.heading(queens,text = 'Queen Stayover')
-    tree.column(queens,minwidth=0,width=150,stretch=False)
-    tree.heading(queenc,text = 'Queen Checkout')
-    tree.column(queenc,minwidth=0,width=150,stretch=False)
-    for i in range(len(values)):
-        if i%2 == 0:
-            tree.insert('',tk.END,values=values[i],tags=('evenrow',))
-        else:
-            tree.insert('',tk.END,values=values[i],tags=('oddrow',))
-            # change color of odd rows here. Go to http://cs111.wellesley.edu/archive/cs111_fall14/public_html/labs/lab12/tkintercolor.html to see all the colors available
-    tree.tag_configure('oddrow',background='light sky blue')
-    tree.grid(row=0,column=0,sticky='nsew')
-    root.mainloop()
+    mainFunc(df)
+    # root = tk.Tk()
+    # # change later
+    # root.title('treeview')
+    # root.resizable(width=800,height=500)
+    # columns = ('HK Name',kings,kingc,queens,queenc)
+    # # columns = ('HK Name','King Stayover','King Checkout','Queen Stayover','Queen Checkout')
+    # values = dfValues(df)
+    # tree = ttk.Treeview(root,columns = columns,show='headings')
+    # tree.heading('HK Name',text='HK Name')
+    # tree.column('HK Name',minwidth=0,width=150,stretch=False)
+    # tree.heading(kings,text = 'King Stayover')
+    # tree.column(kings,minwidth=0,width=150,stretch=False)
+    # tree.heading(kingc, text = 'King Checkout')
+    # tree.column(kingc,minwidth=0,width=150,stretch=False)
+    # tree.heading(queens,text = 'Queen Stayover')
+    # tree.column(queens,minwidth=0,width=150,stretch=False)
+    # tree.heading(queenc,text = 'Queen Checkout')
+    # tree.column(queenc,minwidth=0,width=150,stretch=False)
+    # for i in range(len(values)):
+    #     if i%2 == 0:
+    #         tree.insert('',tk.END,values=values[i],tags=('evenrow',))
+    #     else:
+    #         tree.insert('',tk.END,values=values[i],tags=('oddrow',))
+    #         # change color of odd rows here. Go to http://cs111.wellesley.edu/archive/cs111_fall14/public_html/labs/lab12/tkintercolor.html to see all the colors available
+    # tree.tag_configure('oddrow',background='light sky blue')
+    # tree.grid(row=0,column=0,sticky='nsew')
+    # root.mainloop()
 
 
 # builds and run gui
