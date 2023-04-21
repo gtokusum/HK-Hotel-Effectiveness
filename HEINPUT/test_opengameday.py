@@ -34,4 +34,3 @@ class TestOpengameday():
     self.driver.switch_to.default_content()
     self.driver.find_element(By.CSS_SELECTOR, ".btn-username").click()
     self.driver.find_element(By.CSS_SELECTOR, "#myheqa-navbar-dropdown-element-btnSignout > .dropdown-item").click()
-  
