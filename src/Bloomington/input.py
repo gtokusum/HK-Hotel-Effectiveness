@@ -69,7 +69,7 @@ def mainFunc(df):
     driver = start()
     toGameday(driver)
     inputValues(df,driver)
-    # save(driver)
+    save(driver)
     # driver.quit()
     quit = input('quit:')
     if int(quit) == 1:
