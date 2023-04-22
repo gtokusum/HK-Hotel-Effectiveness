@@ -20,6 +20,7 @@ LENGTH = 100
 
 kings,kingc,queens,queenc = 'King Stayover','King Checkout','Queen Stayover','Queen Checkout'
 
+
 # file browser function
 def fileBrowse():
     filename = filedialog.askopenfilename(initialdir = '/Downloads',title='Select a File', filetypes=[("Excel files","*.xlsx")])
@@ -48,17 +49,18 @@ def dfValues(df):
         xlst.append(tuple(tmpLst))
     return xlst
 
+
 # display dataframe as a pop up window 
 def displayData(df):
-    mainFunc(df)
-    # root = tk.Tk()
+    # # mainFunc(df)
+    # window = tk.Tk()
     # # change later
-    # root.title('treeview')
-    # root.resizable(width=800,height=500)
+    # window.title('treeview')
+    # window.resizable(width=800,height=500)
     # columns = ('HK Name',kings,kingc,queens,queenc)
     # # columns = ('HK Name','King Stayover','King Checkout','Queen Stayover','Queen Checkout')
     # values = dfValues(df)
-    # tree = ttk.Treeview(root,columns = columns,show='headings')
+    # tree = ttk.Treeview(window,columns = columns,show='headings')
     # tree.heading('HK Name',text='HK Name')
     # tree.column('HK Name',minwidth=0,width=150,stretch=False)
     # tree.heading(kings,text = 'King Stayover')
@@ -77,8 +79,8 @@ def displayData(df):
     #         # change color of odd rows here. Go to http://cs111.wellesley.edu/archive/cs111_fall14/public_html/labs/lab12/tkintercolor.html to see all the colors available
     # tree.tag_configure('oddrow',background='light sky blue')
     # tree.grid(row=0,column=0,sticky='nsew')
-    # root.mainloop()
-
+    # window.mainloop()
+    mainFunc(df)
 
 # builds and run gui
 root = tk.Tk()
@@ -86,4 +88,5 @@ root.geometry(f"{WIDTH}x{LENGTH}")
 root.title("Hotel Effectiveness Room Clean Reporter")
 filebnt = tk.Button(root,text='Select File and Start',command=fileBrowse)
 filebnt.pack()
+# inputbnt = tk.Button(root,text='Start Input',anchor=tk.END,command=mainFunc(df))
 root.mainloop()

@@ -38,7 +38,6 @@ def toGameday(driver):
 
 
 def inputValues(df,driver):
-    # from random import randint
     empNum = len(df) # number of employees for the given day. Can be pulled from the dataframe
     driver.switch_to.frame('receiver') #swtich to frame with grid
     grid = driver.find_element(By.ID,'ctl00_main_tblGameDaySchedule') # finds grid and saves as variable
@@ -61,11 +60,8 @@ def save(driver):
     driver.find_element(By.ID,'ctl00_main_hLinkSaveContinue').click() # finds the save button and clicks on it.
     driver.switch_to.default_content()
 
-from HKRECON import main
 
 def mainFunc(df):
-# def mainFunc():
-    # df = main('Sheet1 (14).xlsx')
     driver = start()
     toGameday(driver)
     inputValues(df,driver)
@@ -74,6 +70,3 @@ def mainFunc(df):
     quit = input('quit:')
     if int(quit) == 1:
         driver.quit()
-
-if __name__ == '__main__':
-    mainFunc()
