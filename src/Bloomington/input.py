@@ -42,9 +42,10 @@ def inputValues(df,driver):
     driver.switch_to.frame('receiver') #swtich to frame with grid
     grid = driver.find_element(By.ID,'ctl00_main_tblGameDaySchedule') # finds grid and saves as variable
     newDf = df
-    newDf.columns = ['2','3','4','5'] #sets dataframe columns to match with Hotel Effectiveness
+    a,b = 2,6 
+    newDf.columns = [str(i) for i in range(a,b)] #sets dataframe columns to match with Hotel Effectiveness
 
-    a,b = 2,6
+    
     # will loop through each cell and input value
     for j in range(0,empNum): # row value
         for i in range(a,b): # column value
