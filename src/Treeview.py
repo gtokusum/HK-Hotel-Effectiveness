@@ -72,7 +72,7 @@ def displayData(df):
             # change color of odd rows here. Go to http://cs111.wellesley.edu/archive/cs111_fall14/public_html/labs/lab12/tkintercolor.html to see all the colors available
     tree.tag_configure('oddrow',background='light sky blue')
     tree.grid(row=0,column=0,sticky='nsew')
-    root.mainloop()
+    # root.mainloop()
     
     # SCROLL BAR NOT IMPLEMENTED YET
     # yscrollbar = ttk.Scrollbar(root,orient=tk.VERTICAL,command=tree.yview)
