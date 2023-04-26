@@ -19,7 +19,7 @@ WIDTH = 200
 LENGTH = 100
 
 kings,kingc,queens,queenc = 'King Stayover','King Checkout','Queen Stayover','Queen Checkout'
-
+filename = str()
 
 # file browser function
 def fileBrowse():
@@ -86,7 +86,9 @@ def displayData(df):
 root = tk.Tk()
 root.geometry(f"{WIDTH}x{LENGTH}")
 root.title("Hotel Effectiveness Room Clean Reporter")
-filebnt = tk.Button(root,text='Select File and Start',command=fileBrowse)
-filebnt.pack()
+filebtn = tk.Button(root,text='Select File and Start',command=fileBrowse)
+quitbtn = tk.Button(root,text="QUIT",command=root.quit)
+filebtn.pack()
+quitbtn.pack()
 # inputbnt = tk.Button(root,text='Start Input',anchor=tk.END,command=mainFunc(df))
 root.mainloop()
