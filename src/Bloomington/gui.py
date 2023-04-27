@@ -45,8 +45,8 @@ def autoInput():
     
 def displayError():
     win = tk.Toplevel()
-    message = 'Incorrect Excel Sheet'
-    tk.Label(win,text='File Error').pack()
+    message = 'Something Went Wrong :(('
+    tk.Label(win,text='ERROR').pack()
     text = tk.Text(win)
     text.insert(tk.END,str(message))
     text.pack()
@@ -64,7 +64,7 @@ def dfValues(df):
 
 # display dataframe as a pop up window 
 def displayData(df):
-    window = tk.Tk()
+    window = tk.Toplevel()
     # change later
     window.title('treeview')
     window.resizable(width=800,height=500)
