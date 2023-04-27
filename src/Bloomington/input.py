@@ -62,12 +62,12 @@ def save(driver):
     driver.switch_to.default_content()
 
 
-def mainFunc(df):
+def mainFunc(df,toSave):
     driver = start()
     toGameday(driver)
     inputValues(df,driver)
-    # save(driver)
-    # driver.quit()
-    quit = input('quit:')
-    if int(quit) == 1:
+    if toSave:
+        save(driver)
+        driver.quit()
+    else:
         driver.quit()

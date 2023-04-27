@@ -16,12 +16,12 @@ from HKRECON import main
 from input import mainFunc
 
 WIDTH = 200
-LENGTH = 100
+LENGTH = 150
 
 kings,kingc,queens,queenc = 'King Stayover','King Checkout','Queen Stayover','Queen Checkout'
 filename = str()
 
-# file browser function
+# Grid Function
 def fileBrowse():
     filename = filedialog.askopenfilename(initialdir = '/Downloads',title='Select a File', filetypes=[("Excel files","*.xlsx")])
     
@@ -30,6 +30,18 @@ def fileBrowse():
         displayData(main(filename))
     except:
         displayError()
+
+# Auto Input Function
+def autoInput():
+    filename = filedialog.askopenfilename(initialdir = '/Downloads',title='Select a File', filetypes=[("Excel files","*.xlsx")])
+    
+    
+    try:
+        data = main(filename)
+        mainFunc(data,cb.get())
+    except:
+        displayError()
+    
     
 def displayError():
     win = tk.Toplevel()
@@ -52,7 +64,6 @@ def dfValues(df):
 
 # display dataframe as a pop up window 
 def displayData(df):
-    # # mainFunc(df)
     window = tk.Tk()
     # change later
     window.title('treeview')
@@ -80,15 +91,22 @@ def displayData(df):
     tree.tag_configure('oddrow',background='light sky blue')
     tree.grid(row=0,column=0,sticky='nsew')
     # window.mainloop()
-    # mainFunc(df)
+    return
+
+
 
 # builds and run gui
 root = tk.Tk()
+cb = tk.BooleanVar()
 root.geometry(f"{WIDTH}x{LENGTH}")
 root.title("Hotel Effectiveness Room Clean Reporter")
-filebtn = tk.Button(root,text='Select File and Start',command=fileBrowse)
+gridbtn = tk.Button(root,text='View Grid',command=fileBrowse)
+inputbtn = tk.Button(root,text="Input Data",command=autoInput)
 quitbtn = tk.Button(root,text="QUIT",command=root.quit)
-filebtn.pack()
+gridbtn.pack()
+inputbtn.pack()
+savebtn = tk.Checkbutton(root,text='Save?',variable=cb,onvalue=True,offvalue=False)
+savebtn.pack()
 quitbtn.pack()
-# inputbnt = tk.Button(root,text='Start Input',anchor=tk.END,command=mainFunc(df))
+
 root.mainloop()
