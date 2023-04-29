@@ -15,8 +15,8 @@ def checkRoomFile():
     pass
 
 # creates room file if not found. Will get data for room credit and what room types S/O & C/O equal that credit type
-# Note for me: maybe use the excel sheet to grab data during script to be a universal. (might need to standardize suite values? Could cause the script to take a littl bit longer)
-#                                                                                      (Especially for bigger hotels with more rooms.)
+# Note for me: maybe use the excel sheet to grab data during script to be a universal. (might need to standardize suite values? Could cause the script to take a little bit longer)
+# Could have the user input values in gui to create file                               (Especially for bigger hotels with more rooms.)
 def createRoomFile():
     # NOT IMPLEMENTED
     pass

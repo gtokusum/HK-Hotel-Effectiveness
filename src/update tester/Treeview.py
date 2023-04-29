@@ -13,7 +13,7 @@ from tkinter import ttk
 from tkinter import filedialog
 from tkinter.messagebox import showinfo
 import pandas as pd
-from HKRECON import main
+# from HKRECON import main
 
 WIDTH = 200
 LENGTH = 100
