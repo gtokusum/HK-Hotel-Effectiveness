@@ -17,7 +17,7 @@ def toGameday(driver):
     driver.get("https://my.hoteleffectiveness.com/signin")
     driver.set_window_size(945, 1020)
     driver.find_element(By.ID, "myheqa-loginForm-field-username").send_keys("gtokusumi") #username
-    driver.find_element(By.ID, "myheqa-loginForm-field-password").send_keys("Airfruitfly1") #password
+    driver.find_element(By.ID, "myheqa-loginForm-field-password").send_keys("PASSWORD") #password
     driver.find_element(By.ID, "myheqa-loginForm-button-submit").click() #click on log in button
 
     # waits until it finds link to housekeeping gameday set up page. once found click it
@@ -62,12 +62,12 @@ def save(driver):
     driver.switch_to.default_content()
 
 
-def mainFunc(df):
+def mainFunc(df,toSave):
     driver = start()
     toGameday(driver)
     inputValues(df,driver)
-    # save(driver)
-    # driver.quit()
-    quit = input('quit:')
-    if int(quit) == 1:
+    if toSave:
+        save(driver)
+        driver.quit()
+    else:
         driver.quit()
