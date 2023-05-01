@@ -65,7 +65,8 @@ Using auto_py_to_exe run the following command to start
 auto_py_to_exe
 ```
 This will bring up a GUI for pyinstaller.\
-Select the script gui.py and select One File, Window Based
+Select the script gui.py and select One File, Window Based,\
+Can opt out to not hide terminal if needed. 
 
 ![Alt text](/img/auto_py_to_exe.PNG) 
 
