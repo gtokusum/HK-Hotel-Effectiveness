@@ -6,18 +6,19 @@ from selenium.webdriver.support import expected_conditions
 from selenium.webdriver.support.wait import WebDriverWait
 # from selenium.webdriver.common.keys import Keys
 # from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
-
+from dotenv import load_dotenv
+import os
 
 
 def start():
     driver = webdriver.Chrome()
     return driver
 
-def toGameday(driver):
+def toGameday(driver,username, password):
     driver.get("https://my.hoteleffectiveness.com/signin")
     driver.set_window_size(945, 1020)
-    driver.find_element(By.ID, "myheqa-loginForm-field-username").send_keys("gtokusumi") #username
-    driver.find_element(By.ID, "myheqa-loginForm-field-password").send_keys("PASSWORD") #password
+    driver.find_element(By.ID, "myheqa-loginForm-field-username").send_keys(username) #username
+    driver.find_element(By.ID, "myheqa-loginForm-field-password").send_keys(password) #password
     driver.find_element(By.ID, "myheqa-loginForm-button-submit").click() #click on log in button
 
     # waits until it finds link to housekeeping gameday set up page. once found click it
@@ -64,7 +65,10 @@ def save(driver):
 
 def mainFunc(df,toSave):
     driver = start()
-    toGameday(driver)
+    load_dotenv()
+    user = os.environ['USERNAME']
+    passw = os.environ['PASSWORD']
+    toGameday(driver,user,passw)
     inputValues(df,driver)
     if toSave:
         save(driver)
