@@ -8,7 +8,9 @@ from selenium.webdriver.support.wait import WebDriverWait
 # from selenium.webdriver.common.desired_capabilities import DesiredCapabilities
 from dotenv import load_dotenv
 import os
-
+load_dotenv()
+user = os.environ['USERNAME']
+passw = os.environ['PASSWORD']
 
 def start():
     driver = webdriver.Chrome()
@@ -65,9 +67,6 @@ def save(driver):
 
 def mainFunc(df,toSave):
     driver = start()
-    load_dotenv()
-    user = os.environ['USERNAME']
-    passw = os.environ['PASSWORD']
     toGameday(driver,user,passw)
     inputValues(df,driver)
     if toSave:
