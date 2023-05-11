@@ -9,7 +9,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from dotenv import load_dotenv
 import os
 load_dotenv()
-user = os.environ['USERNAME']
+user = os.environ['USERN']
 passw = os.environ['PASSWORD']
 
 def start():
