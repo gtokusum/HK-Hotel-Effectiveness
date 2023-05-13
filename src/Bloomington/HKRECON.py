@@ -137,5 +137,5 @@ def main(name):
 
 
 # Uncomment below if running script from here instead of gui.py
-if __name__ == '__main__':
-    print(main('Sheet1 (1).xlsx'))
+# if __name__ == '__main__':
+#     print(main('Sheet1 (1).xlsx'))
