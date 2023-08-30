@@ -15,7 +15,7 @@ suitesK = ['SGK','STE1']
 SuitesS = 'STE2'
 suitesQ = ['SGQQ','ASGQQ']
 # headerRow = ['B1','C1','D1','E1']
-headerValues = ['King Stayover','King Checkout','Queen Stayover','Queen Checkout']
+headerValues = ['King Stayover','King Checkout','Queen Stayover','Queen Checkout','Suite Stayover','Suite Checkout']
 
 
 # pull data from boards. outputs dataframe of excel file
@@ -60,9 +60,10 @@ def counter(data):
     count = initDict()
     for i in range(len(data['Room Points'])):
         points = data['Room Points'].iloc[i]
+        room = data['Room Type'].iloc[i]
         if pd.isna(points) == True:
             # check service type and room
-            room = data['Room Type'].iloc[i]
+            
             service = data['Service Type'].iloc[i]
 
             # change values here to adjust per property
@@ -71,25 +72,33 @@ def counter(data):
                     count['King Checkout'] = count['King Checkout'] + 1
                 elif room in queens:
                     count['Queen Checkout'] = count['Queen Checkout'] + 1
-                elif room in suitesK:
-                    count['King Checkout'] = count['King Checkout'] + 1
-                    count['King Stayover'] = count['King Stayover'] + 1
-                elif room in suitesQ:
-                    count['King Stayover'] = count['King Stayover'] + 1
-                    count['Queen Checkout'] = count['Queen Checkout'] + 1 
                 else:
-                    count['King Checkout'] = count['King Stayover'] + 2
+                    count['Suite Checkout'] = count['Suite Checkout'] + 1
+
+                    # Code for only King and Queen Columns
+                    # uncomment and keep if and first elif statement
+                # elif room in suitesK:
+                #     count['King Checkout'] = count['King Checkout'] + 1
+                #     count['King Stayover'] = count['King Stayover'] + 1
+                # elif room in suitesQ:
+                #     count['King Stayover'] = count['King Stayover'] + 1
+                #     count['Queen Checkout'] = count['Queen Checkout'] + 1 
+                # else:
+                    # count['King Checkout'] = count['King Stayover'] + 2
             else:
                 if room in kings:
                     count['King Stayover'] = count['King Stayover'] + 1
                 elif room in queens:
                     count['Queen Stayover'] = count['Queen Checkout'] + 1
-                elif room in suitesK:
-                    count['King Checkout'] = count['King Checkout'] + 1
-                elif room in suitesQ:
-                    count['Queen Checkout'] = count['Queen Checkout'] + 1
                 else:
-                    count['Queen Stayover'] = count['Queen Stayover'] + 2
+                    count['Suite Stayover'] = count['Suite Stayover'] + 1
+                #       Uncomment for gk, gqq column same as above.
+                # elif room in suitesK:
+                #     count['King Checkout'] = count['King Checkout'] + 1
+                # elif room in suitesQ:
+                #     count['Queen Checkout'] = count['Queen Checkout'] + 1
+                # else:
+                #     count['Queen Stayover'] = count['Queen Stayover'] + 2
         else:
             match points:
                 case 3:
@@ -97,19 +106,36 @@ def counter(data):
                 case 4:
                     count['Queen Stayover'] = count['Queen Stayover'] + 1
                 case 6:
-                    count['King Checkout'] = count["King Checkout"] + 1 
+                    if room in kings:
+                        count['King Checkout'] = count["King Checkout"] + 1
+                    # comment below for 4 column
+                    else:
+                        count['Suite Stayover'] = count['Suite Stayover'] + 1 
                 case 7:
-                    count['Queen Checkout'] = count['Queen Checkout'] + 1
+                    if room in queens:
+                        count['Queen Checkout'] = count['Queen Checkout'] + 1
+                    # comment below for 4 column
+                    else:
+                        count['Suite Stayover'] = count['Suite Stayover'] + 1
                 case 8:
-                    count['Queen Stayover'] = count['Queen Stayover'] + 2
+                    count['Suite Stayover'] = count['Suite Stayover'] + 1
                 case 9:
-                    count['King Checkout'] = count['King Checkout'] + 1
-                    count['King Stayover'] = count['King Stayover'] + 1
+                    count['Suite Checkout'] = count['Suite Checkout']+1
                 case 10:
-                    count['King Stayover'] = count['King Stayover'] + 1
-                    count['Queen Checkout'] = count['Queen Checkout'] + 1
+                    count['Suite Checkout'] = count['Suite Checkout']+1
                 case 12:
-                    count['King Checkout'] = count['King Checkout'] + 2
+                    count['Suite Checkout'] = count['Suite Checkout'] + 1
+                # uncomment below for 4 column
+                # case 8:
+                #     count['Queen Stayover'] = count['Queen Stayover'] + 2
+                # case 9:
+                #     count['King Checkout'] = count['King Checkout'] + 1
+                #     count['King Stayover'] = count['King Stayover'] + 1
+                # case 10:
+                #     count['King Stayover'] = count['King Stayover'] + 1
+                #     count['Queen Checkout'] = count['Queen Checkout'] + 1
+                # case 12:
+                #     count['King Checkout'] = count['King Checkout'] + 2
                 case _:
                     pass
     
@@ -118,7 +144,7 @@ def counter(data):
 # initializes Dictionary for room count
 def initDict():
     # Add more if needed. i.e. more room types available on HE
-    return {'King Checkout':0,'King Stayover':0,'Queen Checkout':0,'Queen Stayover':0}
+    return {'King Checkout':0,'King Stayover':0,'Queen Checkout':0,'Queen Stayover':0,'Suite Checkout':0,'Suite Stayover':0}
 
 # saves calculations in excel format
 def save(df):
@@ -138,4 +164,4 @@ def main(name):
 
 # Uncomment below if running script from here instead of gui.py
 # if __name__ == '__main__':
-#     print(main('Sheet1 (1).xlsx'))
+#     print(main('src\Bloomington\Sheet1 (4).xlsx'))

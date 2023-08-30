@@ -18,7 +18,7 @@ from input import mainFunc
 WIDTH = 200
 LENGTH = 150
 
-kings,kingc,queens,queenc = 'King Stayover','King Checkout','Queen Stayover','Queen Checkout'
+kings,kingc,queens,queenc,suites,suitec = 'King Stayover','King Checkout','Queen Stayover','Queen Checkout','Suite Stayover','Suite Checkout'
 filename = str()
 
 # Grid Function
@@ -68,7 +68,7 @@ def displayData(df):
     # change later
     window.title('treeview')
     window.resizable(width=800,height=500)
-    columns = ('HK Name',kings,kingc,queens,queenc)
+    columns = ('HK Name',kings,kingc,queens,queenc,suites,suitec)
     # columns = ('HK Name','King Stayover','King Checkout','Queen Stayover','Queen Checkout')
     values = dfValues(df)
     tree = ttk.Treeview(window,columns = columns,show='headings')
@@ -82,6 +82,10 @@ def displayData(df):
     tree.column(queens,minwidth=0,width=150,stretch=False)
     tree.heading(queenc,text = 'Queen Checkout')
     tree.column(queenc,minwidth=0,width=150,stretch=False)
+    tree.heading(suites,text = 'Suite Stayover')
+    tree.column(suites,minwidth=0,width=150,stretch=False)
+    tree.heading(suitec,text='Suite Checkout')
+    tree.column(suitec,minwidth=0,width=150,stretch=False)
     for i in range(len(values)):
         if i%2 == 0:
             tree.insert('',tk.END,values=values[i],tags=('evenrow',))

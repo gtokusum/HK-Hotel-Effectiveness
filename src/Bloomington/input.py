@@ -13,10 +13,12 @@ user = os.environ['USERN']
 passw = os.environ['PASSWORD']
 
 def start():
+    print('started')
     driver = webdriver.Chrome()
     return driver
 
 def toGameday(driver,username, password):
+    print('ToGameDay')
     driver.get("https://my.hoteleffectiveness.com/signin")
     driver.set_window_size(945, 1020)
     driver.find_element(By.ID, "myheqa-loginForm-field-username").send_keys(username) #username
@@ -45,7 +47,7 @@ def inputValues(df,driver):
     driver.switch_to.frame('receiver') #swtich to frame with grid
     grid = driver.find_element(By.ID,'ctl00_main_tblGameDaySchedule') # finds grid and saves as variable
     newDf = df
-    a,b = 2,6 
+    a,b = 2,8
     newDf.columns = [str(i) for i in range(a,b)] #sets dataframe columns to match with Hotel Effectiveness
 
     
@@ -67,6 +69,7 @@ def save(driver):
 
 def mainFunc(df,toSave):
     driver = start()
+    print('started now gameday')
     toGameday(driver,user,passw)
     inputValues(df,driver)
     if toSave:
