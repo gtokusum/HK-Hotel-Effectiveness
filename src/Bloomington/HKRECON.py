@@ -10,7 +10,7 @@ Openpyxl - excel support (not implemented)
 
 # init global variables for when points == NAN, Likely happens when pulling boards with completed rooms
 kings = ['GK','AGK','B5GK','DGK','STK']
-queens = ['GQQ','GTT','STB','DCGQQ','ASJQQ','DGQQ']
+queens = ['GQQ','GTT','STB','DCGQQ','ASJQQ','DGQQ','AGQQ','DGQQ','']
 suitesK = ['SGK','STE1']
 SuitesS = 'STE2'
 suitesQ = ['SGQQ','ASGQQ']

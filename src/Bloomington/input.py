@@ -27,7 +27,7 @@ def toGameday(driver,username, password):
 
     # waits until it finds link to housekeeping gameday set up page. once found click it
     WebDriverWait(driver,timeout=30).until(lambda d: d.find_element(By.XPATH,"/html/body/he-root/div/ng-component/div/main/ng-component/ng-component/he-page-body-container/div/he-hotel-view-widgets/div/div/div[1]/div/he-dynamic-component-wrapper/ng-component/div/form/div[3]/a")) #waits until start game day button
-    driver.find_element(By.XPATH, "/html/body/he-root/div/ng-component/div/main/ng-component/ng-component/he-page-body-container/div/he-hotel-view-widgets/div/div/div[1]/div/he-dynamic-component-wrapper/ng-component/div/form/div[3]/a").click() #click start gameday button
+    driver.find_element(By.XPATH, "/html/body/he-root/div/ng-component/div/div/main/ng-component/ng-component/he-page-body-container/div/he-hotel-view-widgets/div/div/div[1]/div/he-dynamic-component-wrapper/ng-component/div/div[3]/div[2]/a").click() #click start gameday button
 
     # waits for the receiver frame to be found then switches to it to click on 'Show Only Scheduled Room Attendants'
     WebDriverWait(driver,timeout=30).until(expected_conditions.frame_to_be_available_and_switch_to_it((By.ID,'receiver')))
